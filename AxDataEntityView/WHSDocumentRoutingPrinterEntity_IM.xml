@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxDataEntityView xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>WHSDocumentRoutingPrinterEntity_IM</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class WHSDocumentRoutingPrinterEntity_IM extends common
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>printLabelToPrinter</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Send the specified label to the specified printer.
+    /// </summary>
+    /// <param name = "_printerName">Name of the printer to print to.</param>
+    /// <param name = "_label">ZPL commands that comprise the label.</param>
+    [SysODataActionAttribute("printLabelToPrinter", false)]
+    public static void printLabelToPrinter(Name _printerName, str _label)
+    {
+        WhsDocumentRouting::printLabelToPrinter(_printerName, _label);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<ConfigurationKey>WHSandTMS</ConfigurationKey>
+	<FormRef>WHSDocumentRouting</FormRef>
+	<Label>Documenmt routing printers (IM)</Label>
+	<Tags>Setup</Tags>
+	<EntityCategory>Reference</EntityCategory>
+	<IsPublic>Yes</IsPublic>
+	<Modules>WMS</Modules>
+	<PrimaryCompanyContext>DataAreaId</PrimaryCompanyContext>
+	<PrimaryKey>EntityKey</PrimaryKey>
+	<PublicCollectionName>WHSDocumentRoutingPrinters_IM</PublicCollectionName>
+	<PublicEntityName>WHSDocumentRoutingPrinter_IM</PublicEntityName>
+	<DeleteActions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>AutoReport</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoLookup</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoIdentification</Name>
+			<AutoPopulate>Yes</AutoPopulate>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoSummary</Name>
+			<Fields />
+		</AxTableFieldGroup>
+		<AxTableFieldGroup>
+			<Name>AutoBrowse</Name>
+			<Fields />
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<Fields>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>DocumentRoutingPrinterLayoutId</Name>
+			<DataField>DocumentRoutingPrinterLayoutId</DataField>
+			<DataSource>WHSDocumentRoutingPrinterEntity</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>DocumentRoutingPrinterName</Name>
+			<DataField>DocumentRoutingPrinterName</DataField>
+			<DataSource>WHSDocumentRoutingPrinterEntity</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>DocumentRoutingWarehouseId</Name>
+			<DataField>DocumentRoutingWarehouseId</DataField>
+			<DataSource>WHSDocumentRoutingPrinterEntity</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>DocumentRoutingSequence</Name>
+			<DataField>DocumentRoutingSequence</DataField>
+			<DataSource>WHSDocumentRoutingPrinterEntity</DataSource>
+		</AxDataEntityViewField>
+		<AxDataEntityViewField xmlns=""
+			i:type="AxDataEntityViewMappedField">
+			<Name>DocumentRoutingWorkOrderType</Name>
+			<DataField>DocumentRoutingWorkOrderType</DataField>
+			<DataSource>WHSDocumentRoutingPrinterEntity</DataSource>
+		</AxDataEntityViewField>
+	</Fields>
+	<Keys>
+		<AxDataEntityViewKey>
+			<Name>EntityKey</Name>
+			<Fields>
+				<AxDataEntityViewKeyField>
+					<DataField>DocumentRoutingWarehouseId</DataField>
+				</AxDataEntityViewKeyField>
+				<AxDataEntityViewKeyField>
+					<DataField>DocumentRoutingWorkOrderType</DataField>
+				</AxDataEntityViewKeyField>
+				<AxDataEntityViewKeyField>
+					<DataField>DocumentRoutingSequence</DataField>
+				</AxDataEntityViewKeyField>
+				<AxDataEntityViewKeyField>
+					<DataField>DocumentRoutingPrinterName</DataField>
+				</AxDataEntityViewKeyField>
+				<AxDataEntityViewKeyField>
+					<DataField>DocumentRoutingPrinterLayoutId</DataField>
+				</AxDataEntityViewKeyField>
+			</Fields>
+		</AxDataEntityViewKey>
+	</Keys>
+	<Mappings />
+	<Ranges />
+	<Relations />
+	<StateMachines />
+	<ViewMetadata>
+		<Name>Metadata</Name>
+		<SourceCode>
+			<Methods>
+				<Method>
+					<Name>classDeclaration</Name>
+					<Source><![CDATA[
+[Query]
+public class Metadata extends QueryRun
+{
+}
+]]></Source>
+				</Method>
+			</Methods>
+		</SourceCode>
+		<DataSources>
+			<AxQuerySimpleRootDataSource>
+				<Name>WHSDocumentRoutingPrinterEntity</Name>
+				<DynamicFields>Yes</DynamicFields>
+				<Table>WHSDocumentRoutingPrinterEntity</Table>
+				<DataSources />
+				<DerivedDataSources />
+				<Fields />
+				<Ranges />
+				<GroupBy />
+				<Having />
+				<OrderBy />
+			</AxQuerySimpleRootDataSource>
+		</DataSources>
+	</ViewMetadata>
+</AxDataEntityView>
